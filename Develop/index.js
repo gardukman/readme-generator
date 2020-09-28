@@ -1,6 +1,18 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// this function inserts the user input into the ToC via the inquirer prompt
+function insertToc() {
+    return `
+    - [Description](#description)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [License](#license)
+    - [Contributing](#contributing)
+    - [Tests](#tests)
+    - [Questions](#questions)`
+};
+
 // array of questions for user
 const questions = [
     {
@@ -32,7 +44,7 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'Please select your license.',
-        choices: ['MIT', 'Apache', 'GPL']
+        choices: ['MIT', 'Mozilla', 'GPL']
     },
     {
         type: 'input',
@@ -46,6 +58,28 @@ const questions = [
     },
 
 ];
+
+inquirer.prompt(questions)
+    .then((readMe) => {
+        const {
+            github, title, description, installation, usage, credits, license, contributing, email} = readMe;
+
+        fs.appendFile('ReadMe.md',
+            '# ' + title +
+            '## Description' + '\n\n' + description + '\n\n' +
+            insertToc() + '\n\n' + 
+            '## Installation' + '\n\n' + installation + '\n\n' +
+            '## Usage' + '\n\n' + usage + '\n\n' +
+            '## Credits' + '\n\n' + credits + '\n\n' +
+            '## Contributing' + '\n\n' + contributing + '\n\n' +
+            '## Questions' + '\n\n' +
+            '### Please Contact: ' + github + ' Email: ' + email, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("Success!");
+            });
+    });
 
 // function to write README file
 function writeToFile(README,) {
