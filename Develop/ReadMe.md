@@ -1,6 +1,6 @@
-# asdf## Description
+# readme-generator## Description
 
-asdf
+The code takes input from the user to generate a quality read me the user can impliment in their repo
 
 
     - [Description](#description)
@@ -13,15 +13,15 @@ asdf
 
 ## Installation
 
-asdf
+Clone from github
 
 ## Usage
 
-asdf
+na
 
 ## License
 
-MIT,GPL,Mozilla
+MIT
 
 ## Credits
 
@@ -29,8 +29,8 @@ undefined
 
 ## Contributing
 
-asdf
+none
 
 ## Questions
 
-### Please Contact: agasd Email: asdf
+### Please Contact: gar Email: gkdhsldfk@mail.com
