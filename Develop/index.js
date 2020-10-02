@@ -44,7 +44,7 @@ const questions = [
         type: 'checkbox',
         name: 'license',
         message: 'Please select your license.',
-        choices: ['MIT', 'Mozilla', 'GPL']
+        choices: ['MIT', 'GPL', 'Mozilla']
     },
     {
         type: 'input',
@@ -69,7 +69,8 @@ inquirer.prompt(questions)
             '## Description' + '\n\n' + description + '\n\n' +
             insertToc() + '\n\n' + 
             '## Installation' + '\n\n' + installation + '\n\n' +
-            '## Usage' + '\n\n' + usage + '\n\n' +
+            '## Usage' + '\n\n' + usage + '\n\n' + 
+            '## License' + '\n\n' + license + '\n\n' +
             '## Credits' + '\n\n' + credits + '\n\n' +
             '## Contributing' + '\n\n' + contributing + '\n\n' +
             '## Questions' + '\n\n' +
@@ -80,15 +81,3 @@ inquirer.prompt(questions)
                 console.log("Success!");
             });
     });
-
-// function to write README file
-function writeToFile(README,) {
-}
-
-// function to initialize program
-function init() {
-
-}
-
-// function call to initialize program
-init();
